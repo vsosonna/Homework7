@@ -8,6 +8,7 @@ public class Main {
         task6();
         task7();
         task8();
+
     }
 
     public static void task1() {
@@ -42,25 +43,26 @@ public class Main {
         int yearTotal = 10;
         int year = 0;
         while (year < yearTotal) {
-            population += ((population / 1000 * fertility) - mortality);
+            population += population / 1000 * (fertility - mortality);
             year++;
             System.out.println("Год " + year + " численность населения составляет " + population);
         }
     }
 
-    public static void task4() {
+    public static void task4()
+
+    {
+        System.out.println( "Задача 4");
         int amountSavings = 12000000;
         double salary = 15000;
-        int x = 1;
-        int total = 0;
+        int x = 0;
         int percent = 7;
         while (salary <= amountSavings) {
-            System.out.println("Месяц " + x + " Итого " + total);
             salary += salary * percent / 100;
-            total += salary;
             x++;
+            System.out.println("Месяц " + x + " Итого " + salary);
         }
-        System.out.println("Итоговая сумма " + total + "потребовалось месяцев " + x);
+        System.out.println("Итоговая сумма " + salary + "потребовалось месяцев " + x);
     }
 
     public static void task5() {
@@ -74,21 +76,22 @@ public class Main {
             salary1 += salary1 * percent / 100;
             x1++;
         }
-        System.out.println("Итоговая сумма " + salary1 + "потребовалось месяцев " + x1);
+        System.out.println("Итоговая сумма " + salary1 + " потребовалось месяцев " + x1);
     }
 
     public static void task6() {
+        System.out.println( "Задача 6");
         double summa = 15000;
-        int tot = 0;
         int percent1 = 7;
         int month = 0;
-        while (month <= 108) {
-            if (month % 6 == 0)
-                System.out.println("Месяц " + month + "итого " + tot);
+        int year = 9;
+        while (month < year * 12) {
             summa += summa * percent1 / 100;
-            tot += summa;
             month++;
+            if (month % 6 == 0)
+                System.out.println("Месяц " + month + "итого " + summa);
         }
+        System.out.println("Итоговая сумма " + summa + " потребовалось месяцев " + month);
     }
 
     public static void task7() {
@@ -108,13 +111,12 @@ public class Main {
         int comet = 79;
 
         for (int p = 0; p < thisYear + nextYear; p += comet) {
-        if (p > thisYear - recentYears) {
-            System.out.println(p);
+            if (p > thisYear - recentYears) {
+                System.out.println(p);
+            }
         }
-    }
 
     }
-
 }
 
 
